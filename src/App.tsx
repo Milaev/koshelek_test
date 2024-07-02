@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import store from './store/store';
 import CurrencyConverter from './components/currency-converter/CurrencyConverter';
 import { Provider } from 'react-redux';

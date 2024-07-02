@@ -18,14 +18,14 @@ const currencySlice = createSlice({
   reducers: {
     setUsd: (state, action: PayloadAction<number | string>) => {
       const value = action.payload === '' ? '' : parseFloat(action.payload as string);
-      const eur = value === '' ? '' : value / EXCHANGE_RATE;
-      state.usd = value;
+      const eur = value === '' ? '' : (value / EXCHANGE_RATE).toFixed(2);;
+      state.usd = action.payload;
       state.eur = eur;
     },
     setEur: (state, action: PayloadAction<number | string>) => {
       const value = action.payload === '' ? '' : parseFloat(action.payload as string);
-      const usd = value === '' ? '' : value * EXCHANGE_RATE;
-      state.eur = value;
+      const usd = value === '' ? '' : (value * EXCHANGE_RATE).toFixed(2);
+      state.eur = action.payload;
       state.usd = usd;
     },
   },

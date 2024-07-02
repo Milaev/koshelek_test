@@ -28,9 +28,8 @@ const CurrencyConverter: React.FC = () => {
         <input
           type="text"
           id="usd"
-          value={usd}
+          value={typeof usd === 'number' ? usd.toFixed(2) : usd}
           onChange={handleUsdChange}
-          inputMode="decimal"
         />
       </div>
       <div className="currency-input">
@@ -38,9 +37,8 @@ const CurrencyConverter: React.FC = () => {
         <input
           type="text"
           id="eur"
-          value={eur}
+          value={typeof eur === 'number' ? eur.toFixed(2) : eur}
           onChange={handleEurChange}
-          inputMode="decimal"
         />
       </div>
     </div>
